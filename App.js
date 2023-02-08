@@ -48,11 +48,11 @@ export default function CardCarousel() {
         )}
         scrollEventThrottle={12}
       >
-        {cards.map((item, idx) => {
+        {cards.map((item, index) => {
           const inputRange = [
-            (idx - 1) * ITEM_WIDTH,
-            idx * ITEM_WIDTH,
-            (idx + 1) * ITEM_WIDTH,
+            (index - 1) * ITEM_WIDTH,
+            index * ITEM_WIDTH,
+            (index + 1) * ITEM_WIDTH,
           ];
 
           const translate = scrollX.interpolate({
@@ -70,8 +70,8 @@ export default function CardCarousel() {
               style={{
                 width: ITEM_WIDTH,
                 height: ITEM_HEIGHT,
-                marginLeft: idx === 0 ? OFFSET : undefined,
-                marginRight: idx === cards.length - 1 ? OFFSET : undefined,
+                marginLeft: index === 0 ? OFFSET : undefined,
+                marginRight: index === cards.length - 1 ? OFFSET : undefined,
                 opacity: opacity,
                 transform: [{ scale: translate }],
               }}
